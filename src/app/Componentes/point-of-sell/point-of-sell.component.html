@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+  <div>
+    <h1>Point of Sell</h1>
+  </div>
+
+  <div>
+    <label for="nombreInput">Nombre:</label>
+    <input type="text" id="nombreInput" name="name" [(ngModel)]="name" required />
+  </div>
+
+  <div>
+    <label for="pedidoInput">Pedido:</label>
+    <input type="text" id="pedidoInput" name="description" [(ngModel)]="description" required="" />
+  </div>
+
+  <div>
+    <button type="submit">Ordenar</button>
+  </div>
+</form>

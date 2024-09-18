@@ -1,0 +1,14 @@
+<div>
+  <b>Pedidos listos para entregar</b>
+  <ul>
+    @for (pedido of pedidos; track $index) { @if (pedido.estado === 'cocinado')
+    {
+    <li>
+      <span
+        >({{ pedido.number }}) - {{ pedido.description }}
+        <button (click)="entregarPedido(pedido)">Entregar!</button>
+      </span>
+    </li>
+    } }
+  </ul>
+</div>

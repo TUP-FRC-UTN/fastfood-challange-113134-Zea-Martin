@@ -1,0 +1,30 @@
+<div>
+  <h1>Restaurant FastFood</h1>
+</div>
+
+<div>Pedidos Ingresados</div>
+
+<br />
+
+<div>
+  <span>
+    [ @for (pedido of pedidos; track $index) { @if (pedido.estado ==
+    "pendienteDeCocinar") { "nombre": {{ pedido.name }}, "descripcion":
+    {{ pedido.description }}, "numero": {{ pedido.number }} }} ]
+  </span>
+</div>
+
+
+<br />
+
+<div>
+  <app-entrega />
+</div>
+
+<div>
+  <app-point-of-sell />
+</div>
+
+<div>
+  <app-cocina />
+</div>

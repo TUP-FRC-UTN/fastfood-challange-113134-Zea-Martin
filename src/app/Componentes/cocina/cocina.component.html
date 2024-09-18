@@ -1,0 +1,29 @@
+<div>
+  <h1>Cocina</h1>
+</div>
+
+<div>
+  <b>Pendientes de cocinar</b>
+  <ul>
+    @for (pedido of pedidos; track $index) { @if (pedido.estado ===
+    'pendienteDeCocinar') {
+    <li>
+      <span>({{ pedido.number }}) - {{ pedido.description }} </span>
+      <button (click)="cocinarPedido(pedido)" [disabled]="cocinaOcupada">Cocinar</button>
+    </li>
+    } }
+  </ul>
+</div>
+
+<div>
+  <b>Pedidos en cocción</b>
+  <ul>
+    @for (pedido of pedidos; track $index) { @if (pedido.estado === 'cocinando')
+    {
+    <li>
+      <span>({{ pedido.number }}) - {{ pedido.description }} </span>
+      <button (click)="pedidoTerminado(pedido)">Pedido Terminado!</button>
+    </li>
+    } }
+  </ul>
+</div>
